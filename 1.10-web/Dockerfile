@@ -7,10 +7,8 @@ RUN apt update &&\
     apt install unzip -y &&\
     apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists* /tmp/* /var/tmp/* 
 
-RUN cd /tmp &&\
-    wget https://github.com/getgauge/gauge/releases/download/v0.9.7/gauge-0.9.7-linux.x86_64.zip &&\
-    unzip gauge-0.9.7-linux.x86_64.zip &&\
-    GAUGE_PLUGINS=go,html-report ./install.sh &&\
-    rm -rf *
+RUN curl -SsL https://downloads.gauge.org/stable | sh &&\
+    gauge install go &&\
+    gauge install html-report
 
 
