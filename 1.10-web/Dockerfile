@@ -8,6 +8,7 @@ RUN apt update &&\
     apt autoremove -y && apt clean && rm -rf /var/lib/apt/lists* /tmp/* /var/tmp/* 
 
 RUN curl -SsL https://downloads.gauge.org/stable | sh &&\
+    gauge install screenshot &&\
     gauge install go &&\
     gauge install html-report
 
