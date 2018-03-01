@@ -1,4 +1,4 @@
-FROM golang:1.10.0-alpine3.7
+FROM golang:1.10.0-stretch
 
 RUN go get github.com/revel/revel &&\
     go get github.com/revel/cmd/revel
