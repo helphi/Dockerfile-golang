@@ -7,7 +7,7 @@ RUN apt update &&\
 RUN mkdir -p /go/src/github.com/go-swagger &&\
     cd /go/src/github.com/go-swagger &&\
     wget https://github.com/go-swagger/go-swagger/archive/0.16.0.tar.gz &&\
-    tar xzf 0.16.0.tar.gz &&\
+    tar xzf 0.16.0.tar.gz --strip-components 1 &&\
     go install github.com/go-swagger/go-swagger/cmd/swagger &&\
     cd /go/src &&\
     rm -rf *
